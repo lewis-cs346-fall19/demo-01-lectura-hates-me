@@ -10,4 +10,6 @@ while True:
         print("Here's the data: " +msg)
         connectedSock.sendall(msg.encode())
     except ConnectionAbortedError:
+        print('closed')
         connectedSock.close()
+    print('looped')
