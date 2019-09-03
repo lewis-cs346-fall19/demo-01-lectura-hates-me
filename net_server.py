@@ -8,6 +8,6 @@ while True:
     try:
         msg=connectedSock.recv(1024).decode()
         print("Here's the data: " +msg)
-        sock.sendall(msg.encode())
+        connectedSock.sendall(msg.encode())
     except ConnectionAbortedError:
-        sock.close()
+        connectedSock.close()
