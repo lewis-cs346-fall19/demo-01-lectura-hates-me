@@ -6,7 +6,7 @@ sock.listen(5)
 while True:
     (connectedSock, clientAddress)=sock.accept()
     try:
-        msg=sock.recv(1024).decode()
+        msg=connectedSock.recv(1024).decode()
         print("Here's the data: " +msg)
         sock.sendall(msg.encode())
     except ConnectionAbortedError:
