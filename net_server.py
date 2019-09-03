@@ -1,6 +1,6 @@
 import socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-addr = ('0.0.0.0', 17000)
+addr = ("0.0.0.0", 17000)
 sock.bind(addr)
 sock.listen(5)
 while True:
