@@ -12,4 +12,4 @@ while True:
         connectedSock.sendall(msg.encode())
     except ConnectionAbortedError:
         connectedSock.close()
-        sys.exit(0)
+        sys.exit()
