@@ -11,6 +11,7 @@ while True:
         print("Here's the data: " +msg)
         connectedSock.sendall(msg.encode())
     except ConnectionAbortedError:
+        print('test')
         connectedSock.close()
         break
 sys.exit()
