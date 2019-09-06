@@ -6,12 +6,11 @@ sock.bind(addr)
 sock.listen(5)
 (connectedSock, clientAddress)=sock.accept()
 while True:
-    try:
-        msg=connectedSock.recv(1024).decode()
+    msg=connectedSock.recv(1024).decode()
+    if msg!='':
         print("Here's the data: " +msg)
         connectedSock.sendall(msg.encode())
-    except ConnectionAbortedError:
-        print('test')
+    else:
+        print('Server closed')
         connectedSock.close()
         break
-sys.exit()
