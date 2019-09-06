@@ -4,8 +4,8 @@ addr = ("0.0.0.0", 17000)
 sock.bind(addr)
 sock.listen(5)
 while True:
-    (connectedSock, clientAddress)=sock.accept()
     try:
+        (connectedSock, clientAddress)=sock.accept()
         msg=connectedSock.recv(1024).decode()
         print("Here's the data: " +msg)
         connectedSock.sendall(msg.encode())
